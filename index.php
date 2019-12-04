@@ -1,3 +1,13 @@
+<?php
+
+$servicos = [];
+
+$servicos[0] = ["imagem"=>"images/card-producao-sites01.png", "titulo"=>"Sites personalizados", "descricao"=>"Criamos o seu site do zero. Desconto de 10% no pagamento à vista."];
+$servicos[1] = ["imagem"=>"images/card-loja-virtual01.jpg", "titulo"=>"Loja Virtual", "descricao"=>"A sua loja virtual no seu computador. Desconto de 30% no plano anual!"];
+$servicos[2] = ["imagem"=>"images/card-blog01.png", "titulo"=>"Blog", "descricao"=>"Aprenda a fazer um Blog de forma fácil e simples."];
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,7 +36,7 @@
                     <a class="nav-link" href="#">Serviços</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="sobre-nos.html">Sobre nós</a>
+                    <a class="nav-link" href="sobre-nos.php">Sobre nós</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Contato</a>
@@ -40,40 +50,28 @@
         <h2>Compre nossos produtos!</h2>
     </section>
 
+    <?php foreach($servicos as $servico) { ?>
+
     <section id="servico" class="container mt-5">
         <div class="row">
             <div class="col-4">
                 <div class="card" style="width: 18rem;">
-                    <img src="images/card-producao-sites01.png" class="card-img-top" alt="...">
+                    <img src=<?php echo $servico["imagem"]; ?> class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Sites personalizados</h5>
-                        <p class="card-text">Criamos o seu site do zero. Desconto de 10% no pagamento à vista.</p>
-                        <a href="#" class="btn btn-primary">Comprar</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-4">
-                <div class="card" style="width: 18rem;">
-                    <img src="images/card-loja-virtual01.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Loja Virtual</h5>
-                        <p class="card-text">A sua loja virtual no seu computador. Desconto de 30% no plano anual!</p>
-                        <a href="#" class="btn btn-primary">Comprar</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-4">
-                <div class="card" style="width: 18rem;">
-                    <img src="images/card-blog01.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Blog</h5>
-                        <p class="card-text">Aprenda a fazer um Blog de forma fácil e simples.</p>
+                        <h5 class="card-title">
+                            <?php echo $servico["titulo"]; ?>
+                        </h5>
+                        <p class="card-text">
+                            <?php echo $servico["descricao"]; ?>
+                        </p>
                         <a href="#" class="btn btn-primary">Comprar</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <?php } ?>
 </body>
 
 </html>
